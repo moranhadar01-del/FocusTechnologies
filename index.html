@@ -1,118 +1,13 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Technologies | Home Security</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #c5a059; --dark-bg: #050a14; --panel: #0d1626; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; overflow-x: hidden; }
-
-        /* Header & Logo Section */
-        header { padding: 45px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
-        .logo-container { display: inline-block; }
-        .logo-main { font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
-        
-        /* ה-Target בתוך ה-O - משופר */
-        .target-o { position: relative; display: inline-block; padding: 0 4px; margin: 0 -4px; }
-        .target-o::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 62px; height: 62px; border: 2px solid var(--gold); border-radius: 50%; opacity: 1; box-shadow: 0 0 15px rgba(197, 160, 89, 0.4); }
-        .target-o::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 38px; background: var(--gold); z-index: 1; }
-        .target-o span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 38px; height: 2px; background: var(--gold); z-index: 1; display: block; }
-
-        /* TECHNOLOGIES בבולד וברור */
-        .logo-sub { font-size: 1rem; color: var(--gold); letter-spacing: 8px; margin-top: 18px; font-weight: 700; text-transform: uppercase; display: block; }
-
-        /* Navigation Menu */
-        nav { display: flex; justify-content: center; gap: 45px; margin-top: 35px; }
-        .nav-link { color: white; text-decoration: none; font-size: 0.95rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
-        .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
-        .nav-link:hover { opacity: 1; color: var(--gold); }
-
-        /* Main Content Area */
-        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        .hero-section { display: flex; align-items: center; gap: 50px; background: var(--panel); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); display: none; }
-        .hero-section.active { display: flex; animation: fadeIn 0.8s ease forwards; }
-
-        .hero-image { flex: 1.2; height: 500px; overflow: hidden; }
-        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); transition: 0.5s; }
-        .hero-section:hover .hero-image img { filter: brightness(1); }
-
-        .hero-text { flex: 1; padding: 50px; text-align: right; }
-        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; letter-spacing: 2px; font-weight: 700; }
-        .hero-text p { font-size: 1.15rem; line-height: 1.9; color: #cbd5e0; font-weight: 400; margin: 0; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        @media (max-width: 768px) {
-            .hero-section { flex-direction: column; }
-            .hero-image { height: 300px; width: 100%; }
-            .logo-main { font-size: 2.8rem; letter-spacing: 8px; }
-            .target-o::after { width: 48px; height: 48px; }
-            .target-o::before { height: 28px; }
-            .target-o span { width: 28px; }
-            .hero-text { padding: 35px; text-align: center; }
-            nav { gap: 20px; }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="logo-container">
-        <div class="logo-main">F<span class="target-o">O<span></span></span>CUS</div>
-        <div class="logo-sub">TECHNOLOGIES</div>
-    </div>
-    <nav>
-        <div class="nav-link active" onclick="showContent(event, 'face')">FACE ID</div>
-        <div class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
-        <div class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
-    </nav>
-</header>
-
-<div class="container">
-    <div id="face" class="hero-section active">
-        <div class="hero-image">
-            <img src="face-id.jpg.jpg" alt="Face ID">
-        </div>
-        <div class="hero-text">
-            <h2>Smart Access</h2>
-            <p>חוויית כניסה מתקדמת המבוססת על זיהוי פנים בטכנולוגיית AI. הפתרון המושלם לביטחון הבית, המשלב זיהוי מדויק תוך שבריר שנייה ללא צורך במגע. השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
-        </div>
-    </div>
-
-    <div id="keypad" class="hero-section">
-        <div class="hero-image">
-            <img src="keypad.jpg.jpg" alt="Keypads">
-        </div>
-        <div class="hero-text">
-            <h2>Secure Entry</h2>
-            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
-        </div>
-    </div>
-
-    <div id="monitor" class="hero-section">
-        <div class="hero-image">
-            <img src="monitoring.jpg.jpg" alt="Monitoring">
-        </div>
-        <div class="hero-text">
-            <h2>Total Control</h2>
-            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו שמה שיקר לכם מוגן ובטוח.</p>
-        </div>
-    </div>
+<div class="feature-content" style="text-align: right; direction: rtl;">
+    <h3 style="font-size: 2rem; color: #d4af37; margin-bottom: 15px;">Focus Identity</h3>
+    
+    <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">
+        הפתרון המושלם לבניינים ובתים פרטיים
+    </p>
+    
+    <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e0e0;">
+        מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. 
+        הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים, כדי שתוכלו להיות רגועים 
+        **שהיקרים לכם – מהפעוטות והילדים ועד לבני הגיל השלישי – תמיד מוגנים ובטוחים.**
+    </p>
 </div>
-
-<script>
-    function showContent(evt, id) {
-        var i, sections, links;
-        sections = document.getElementsByClassName("hero-section");
-        for (i = 0; i < sections.length; i++) { sections[i].classList.remove("active"); }
-        links = document.getElementsByClassName("nav-link");
-        for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
-        document.getElementById(id).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-</body>
-</html>
