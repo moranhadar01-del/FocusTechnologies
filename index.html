@@ -1,13 +1,133 @@
-<div class="feature-content" style="text-align: right; direction: rtl;">
-    <h3 style="font-size: 2rem; color: #d4af37; margin-bottom: 15px;">Focus Identity</h3>
-    
-    <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 10px;">
-        הפתרון המושלם לבניינים ובתים פרטיים
-    </p>
-    
-    <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e0e0;">
-        מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. 
-        הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים, כדי שתוכלו להיות רגועים 
-        **שהיקרים לכם – מהפעוטות והילדים ועד לבני הגיל השלישי – תמיד מוגנים ובטוחים.**
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-Global | Focus Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --gray: #1a1a1a;
+            --text: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: var(--text);
+            font-family: 'Assistant', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80') no-repeat center center/cover;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .feature-item {
+            background: var(--gray);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .highlight-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .main-description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .footer-note {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FOCUS</h1>
+        <div class="subtitle">Technologies Global</div>
+    </header>
+
+    <div class="container">
+        <div class="feature-item">
+            <h3>Focus Identity</h3>
+            
+            <span class="highlight-text">הפתרון המושלם לבניינים ובתים פרטיים</span>
+            
+            <p class="main-description">
+                מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. 
+                הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – כדי שתמיד תדעו 
+                <strong>שהיקרים לכם, מהפעוטות והילדים ועד לבני הגיל השלישי, מוגנים ובטוחים.</strong>
+            </p>
+            
+            <p class="footer-note">השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 FT-Global Group. All rights reserved.
