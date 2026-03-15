@@ -12,20 +12,19 @@
         /* Header & Logo Section */
         header { padding: 45px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
         .logo-container { display: inline-block; }
-        .logo-main { font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
+        .logo-main { font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
         
-        /* ה-Target בתוך ה-O - משופר */
+        /* ה-Target בתוך ה-O */
         .target-o { position: relative; display: inline-block; padding: 0 4px; margin: 0 -4px; }
         .target-o::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 62px; height: 62px; border: 2px solid var(--gold); border-radius: 50%; opacity: 1; box-shadow: 0 0 15px rgba(197, 160, 89, 0.4); }
         .target-o::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 38px; background: var(--gold); z-index: 1; }
         .target-o span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 38px; height: 2px; background: var(--gold); z-index: 1; display: block; }
 
-        /* TECHNOLOGIES בבולד וברור */
-        .logo-sub { font-size: 1rem; color: var(--gold); letter-spacing: 8px; margin-top: 18px; font-weight: 700; text-transform: uppercase; display: block; }
+        .logo-sub { font-size: 1.1rem; color: var(--gold); letter-spacing: 8px; margin-top: 18px; font-weight: 700; text-transform: uppercase; display: block; }
 
         /* Navigation Menu */
         nav { display: flex; justify-content: center; gap: 45px; margin-top: 35px; }
-        .nav-link { color: white; text-decoration: none; font-size: 0.95rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
+        .nav-link { color: white; text-decoration: none; font-size: 1.1rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
         .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
         .nav-link:hover { opacity: 1; color: var(--gold); }
 
@@ -39,8 +38,8 @@
         .hero-section:hover .hero-image img { filter: brightness(1); }
 
         .hero-text { flex: 1; padding: 50px; text-align: right; }
-        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; letter-spacing: 2px; font-weight: 700; }
-        .hero-text p { font-size: 1.15rem; line-height: 1.9; color: #cbd5e0; font-weight: 400; margin: 0; }
+        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 25px; letter-spacing: 2px; font-weight: 700; }
+        .hero-text p { font-size: 1.4rem; line-height: 1.9; color: #cbd5e0; font-weight: 400; margin: 0; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -48,9 +47,6 @@
             .hero-section { flex-direction: column; }
             .hero-image { height: 300px; width: 100%; }
             .logo-main { font-size: 2.8rem; letter-spacing: 8px; }
-            .target-o::after { width: 48px; height: 48px; }
-            .target-o::before { height: 28px; }
-            .target-o span { width: 28px; }
             .hero-text { padding: 35px; text-align: center; }
             nav { gap: 20px; }
         }
