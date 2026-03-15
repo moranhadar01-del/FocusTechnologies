@@ -5,31 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Technologies</title>
     <style>
-        body { font-family: sans-serif; background-color: #0a192f; color: white; text-align: center; margin: 0; padding: 0; }
-        .header { padding: 40px 0; }
-        .logo { font-size: 3.5rem; color: #c5a059; font-weight: bold; letter-spacing: 8px; }
-        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
-        .tab-btn { background: none; border: 1px solid #c5a059; color: #c5a059; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
-        .tab-btn.active { background: #c5a059; color: #0a192f; font-weight: bold; }
-        .content-area { display: flex; justify-content: center; padding: 0 20px; }
-        .card { background: #112240; border: 1px solid #c5a059; border-radius: 15px; overflow: hidden; max-width: 450px; display: none; }
-        .card.active { display: block; }
-        .card img { width: 100%; height: auto; display: block; }
-        .card-body { padding: 20px; }
-        h2 { color: #c5a059; margin: 0 0 10px 0; }
-        p { color: #8892b0; line-height: 1.5; }
+        :root { --gold: #c5a059; --dark: #0a192f; --card: #112240; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--dark); color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* לוגו יוקרתי */
+        .header { padding: 50px 0 30px 0; text-align: center; }
+        .logo { font-size: 3.5rem; color: var(--gold); font-weight: bold; letter-spacing: 10px; margin: 0; }
+        .logo span { border: 3px solid var(--gold); border-radius: 50%; padding: 0 10px; margin: 0 2px; }
+
+        /* טאבים קבועים ומחוברים */
+        .nav-container { width: 90%; max-width: 500px; background: var(--card); border: 1px solid var(--gold); border-radius: 15px 15px 0 0; display: flex; overflow: hidden; }
+        .tab-btn { flex: 1; background: none; border: none; color: var(--gold); padding: 15px; cursor: pointer; font-size: 1rem; transition: 0.3s; border-bottom: 2px solid transparent; }
+        .tab-btn.active { background: var(--gold); color: var(--dark); font-weight: bold; }
+        .tab-btn:not(:last-child) { border-left: 1px solid rgba(197, 160, 89, 0.3); }
+
+        /* כרטיס תוכן צמוד לטאבים */
+        .content-area { width: 90%; max-width: 500px; background: var(--card); border: 1px solid var(--gold); border-top: none; border-radius: 0 0 15px 15px; overflow: hidden; }
+        .card { display: none; }
+        .card.active { display: block; animation: fadeIn 0.4s ease; }
+        
+        .card img { width: 100%; height: 350px; object-fit: cover; }
+        .card-body { padding: 30px; text-align: center; }
+        
+        h2 { color: var(--gold); margin: 0 0 15px 0; font-size: 1.8rem; }
+        p { color: #8892b0; line-height: 1.7; font-size: 1.1rem; margin: 0; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1 class="logo">FOCUS</h1>
+        <h1 class="logo">FOC<span>U</span>S</h1>
     </div>
 
-    <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('face')">Face ID</button>
-        <button class="tab-btn" onclick="showTab('keypad')">Keypads</button>
-        <button class="tab-btn" onclick="showTab('monitor')">Monitoring</button>
+    <div class="nav-container">
+        <button class="tab-btn active" onclick="showTab(event, 'face')">Face ID</button>
+        <button class="tab-btn" onclick="showTab(event, 'keypad')">Keypads</button>
+        <button class="tab-btn" onclick="showTab(event, 'monitor')">Monitoring</button>
     </div>
 
     <div class="content-area">
@@ -37,7 +50,7 @@
             <img src="face-id.jpg.jpg" alt="Face ID">
             <div class="card-body">
                 <h2>Smart Access</h2>
-                <p>מערכות זיהוי פנים מתקדמות המבוססות על בינה מלאכותית.</p>
+                <p>מערכות זיהוי פנים מתקדמות המבוססות על בינה מלאכותית לאבטחה מקסימלית וחוויית משתמש חלקה.</p>
             </div>
         </div>
 
@@ -45,7 +58,7 @@
             <img src="keypad.jpg.jpg" alt="Keypad">
             <div class="card-body">
                 <h2>Secure Keypads</h2>
-                <p>לוחות מקשים מעוצבים וחסינים לשליטה מלאה.</p>
+                <p>פתרונות נעילה חכמים המשלבים עיצוב אלגנטי עם טכנולוגיית אבטחה מהמתקדמות בעולם.</p>
             </div>
         </div>
 
@@ -53,21 +66,22 @@
             <img src="monitoring.jpg.jpg" alt="Monitoring">
             <div class="card-body">
                 <h2>Smart Monitoring</h2>
-                <p>ניטור בזמן אמת ושליטה מרחוק מכל מקום.</p>
+                <p>ניטור רציף ושליטה חכמה מרחוק המעניקים שקט נפשי מלא לכל מבנה ארגוני.</p>
             </div>
         </div>
     </div>
 
     <script>
-        function showTab(id) {
-            var cards = document.getElementsByClassName('card');
-            var buttons = document.getElementsByClassName('tab-btn');
-            for (var i = 0; i < cards.length; i++) {
-                cards[i].classList.remove('active');
-                buttons[i].classList.remove('active');
-            }
-            document.getElementById(id).classList.add('active');
-            event.currentTarget.classList.add('active');
+        function showTab(evt, id) {
+            var i, cards, buttons;
+            cards = document.getElementsByClassName("card");
+            for (i = 0; i < cards.length; i++) { cards[i].classList.remove("active"); }
+            
+            buttons = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < buttons.length; i++) { buttons[i].classList.remove("active"); }
+            
+            document.getElementById(id).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
     </script>
 </body>
