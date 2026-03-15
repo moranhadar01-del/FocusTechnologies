@@ -6,11 +6,12 @@
     <title>Focus Technologies</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --light-gold: #f4e4bc; --dark: #050a14; --card: #0d1626; }
+        :root { --gold: #c5a059; --light-gold: #f4e4bc; --dark: #050a14; --card: #0d1626; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        /* לוגו ברור וגדול */
-        .header { padding: 60px 0 40px 0; text-align: center; width: 100%; }
+        /* לוגו יוקרתי עם Target הרמוני */
+        .header { padding: 70px 0 50px 0; text-align: center; width: 100%; }
+        .logo-container { position: relative; display: inline-block; }
         .logo-main { 
             font-family: 'Cinzel', serif; 
             font-size: 4.5rem; 
@@ -19,42 +20,52 @@
             letter-spacing: 15px; 
             margin: 0; 
             line-height: 1; 
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-transform: uppercase;
         }
+        /* אפקט הכוונת/Target בתוך ה-O */
+        .u-circle { position: relative; display: inline-block; padding: 0 5px; margin: 0 -5px; }
+        .u-circle::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.8; }
+        
         .logo-sub { 
             font-family: 'Montserrat', sans-serif; 
-            font-size: 1.2rem; /* הגדלתי משמעותית */
-            color: var(--light-gold); /* צבע בהיר יותר שיראו */
+            font-size: 1.1rem; 
+            color: var(--light-gold); 
             letter-spacing: 8px; 
-            margin-top: 5px; 
+            margin-top: 15px; 
             font-weight: 700; 
-            text-transform: uppercase;
-            display: block;
+            text-transform: uppercase; 
+            display: block; 
+            opacity: 0.9;
         }
+        .logo-line { height: 1px; width: 60px; background: var(--gold); margin: 20px auto; opacity: 0.5; }
 
-        /* ניווט */
-        .nav-container { width: 95%; max-width: 600px; display: flex; background: var(--card); border: 1px solid var(--gold); border-radius: 12px 12px 0 0; overflow: hidden; margin-top: 20px; }
-        .tab-btn { flex: 1; background: none; border: none; color: white; padding: 18px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; transition: 0.3s; opacity: 0.5; }
-        .tab-btn.active { opacity: 1; color: var(--dark); background: var(--gold); }
+        /* ניווט - הטאב הפעיל משתנה בהתאם */
+        .nav-container { width: 95%; max-width: 600px; display: flex; background: var(--card); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 12px 12px 0 0; overflow: hidden; margin-top: 20px; }
+        .tab-btn { flex: 1; background: none; border: none; color: white; padding: 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 2px; transition: 0.4s; opacity: 0.5; border-bottom: 3px solid transparent; text-align: center; }
+        .tab-btn.active { opacity: 1; color: var(--gold); border-bottom: 3px solid var(--gold); background: rgba(197, 160, 89, 0.05); font-weight: bold; }
 
-        /* תוכן */
-        .content-area { width: 95%; max-width: 600px; background: var(--card); border: 1px solid var(--gold); border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
-        .card { display: none; }
-        .card.active { display: block; animation: fadeIn 0.5s ease; }
-        .card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 2px solid var(--gold); }
-        .card-body { padding: 35px; text-align: center; }
+        /* תוכן האתר */
+        .content-area { width: 95%; max-width: 600px; background: var(--card); border: 1px solid rgba(197, 160, 89, 0.3); border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .card { display: none; padding-bottom: 30px; }
+        .card.active { display: block; animation: slideUp 0.6s ease; }
         
-        h2 { font-family: 'Cinzel', serif; color: var(--gold); margin: 0 0 15px 0; font-size: 2rem; }
-        p { color: #cbd5e0; line-height: 1.8; font-size: 1.1rem; margin: 0; text-align: center; font-weight: 400; }
+        .card img { width: 100%; height: 400px; object-fit: cover; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .card-body { padding: 40px; text-align: center; }
+        
+        h2 { font-family: 'Cinzel', serif; color: var(--gold); margin: 0 0 20px 0; font-size: 1.8rem; letter-spacing: 2px; }
+        p { color: #cbd5e0; line-height: 1.9; font-size: 1.05rem; margin: 0; text-align: right; text-align-last: center; font-weight: 300; }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div class="logo-main">FOCUS</div>
-        <div class="logo-sub">TECHNOLOGIES</div>
+        <div class="logo-container">
+            <div class="logo-main">F<span class="u-circle">O</span>CUS</div>
+            <div class="logo-line"></div>
+            <div class="logo-sub">TECHNOLOGIES</div>
+        </div>
     </div>
 
     <div class="nav-container">
@@ -68,7 +79,7 @@
             <img src="face-id.jpg.jpg" alt="Face ID">
             <div class="card-body">
                 <h2>SMART ACCESS</h2>
-                <p>טכנולוגיית זיהוי פנים מתקדמת המעניקה אבטחה מקסימלית ללא פשרות. פתרון חדשני, מהיר ומדויק המותאם לעידן המודרני.</p>
+                <p>מערכת זיהוי הפנים המתקדמת של FOCUS משלבת אלגוריתמי בינה מלאכותית (AI) מובילים לאבטחה ביתית בלתי מתפשרת. הטכנולוגיה שלנו מאפשרת כניסה מהירה, מאובחנת וחוויית משתמש חלקה, ללא צורך במגע. היא מזהה פנים באופן מדויק גם בתנאי תאורה מורכבים ומעניקה פתרון גישה חכם ומותאם לכל בית.</p>
             </div>
         </div>
 
@@ -76,7 +87,7 @@
             <img src="keypad.jpg.jpg" alt="Keypad">
             <div class="card-body">
                 <h2>SECURE ENTRY</h2>
-                <p>מערכות בקרה מבוססות קוד בעיצוב יוקרתי ועמידות גבוהה. שילוב מנצח בין אסתטיקה לבין ביטחון ארגוני מוחלט.</p>
+                <p>לוחות המקשים המעוצבים והחסינים של FOCUS מציעים גישה קלאסית עם טכנולוגיה מודרנית לביטחון הבית. המקלדות שלנו מצוידות במנגנוני הגנה מתקדמים נגד חבלה ושיבוש, וניתן לתכנתן עם קודים מרובים ומורכבים. העיצוב האלגנטי והעמיד שלהן הופך אותן לפתרון אבטחה מהימן וחזק לנקודות כניסה שונות בבית.</p>
             </div>
         </div>
 
@@ -84,7 +95,7 @@
             <img src="monitoring.jpg.jpg" alt="Monitoring">
             <div class="card-body">
                 <h2>TOTAL CONTROL</h2>
-                <p>מערך ניטור חכם המאפשר שליטה מלאה בזמן אמת מכל מקום בעולם. לדעת שאתם מוגנים, בכל רגע נתון.</p>
+                <p>מערכת הניטור החכמה של FOCUS מעניקה לכם שליטה מלאה על אבטחת הבית בזמן אמת. עם ממשק מאובטח וידידותי למשתמש, ניתן לצפות בשידור חי מכל מקום בעולם, לנהל התראות חכמות ולפעול במהירות במקרה של אירוע חריג. המערכת מאפשרת ניטור רציף וקבלת תמונה מלאה של מצב האבטחה, ומבטיחה שקט נפשי מלא לכם ולמשפחתכם.</p>
             </div>
         </div>
     </div>
@@ -94,8 +105,10 @@
             var i, cards, buttons;
             cards = document.getElementsByClassName("card");
             for (i = 0; i < cards.length; i++) { cards[i].classList.remove("active"); }
+            
             buttons = document.getElementsByClassName("tab-btn");
             for (i = 0; i < buttons.length; i++) { buttons[i].classList.remove("active"); }
+            
             document.getElementById(id).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
