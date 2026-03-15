@@ -3,23 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Technologies | Home Security</title>
+    <title>Focus Technologies</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark-bg: #050a14; --panel: #0d1626; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; }
 
-        header { padding: 45px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
-        .logo-container { display: inline-block; }
-        .logo-main { font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
-        
-        .target-o { position: relative; display: inline-block; padding: 0 4px; margin: 0 -4px; }
-        .target-o::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border: 2px solid var(--gold); border-radius: 50%; opacity: 1; box-shadow: 0 0 15px rgba(197, 160, 89, 0.4); }
-        .target-o::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 42px; background: var(--gold); z-index: 1; }
-        .target-o span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 42px; height: 2px; background: var(--gold); z-index: 1; display: block; }
+        header { padding: 40px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .logo-main { font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold); letter-spacing: 12px; margin: 0; font-weight: 700; }
+        .logo-sub { font-size: 1.1rem; color: var(--gold); letter-spacing: 8px; margin-top: 15px; font-weight: 700; display: block; }
 
-        .logo-sub { font-size: 1.1rem; color: var(--gold); letter-spacing: 10px; margin-top: 22px; font-weight: 700; text-transform: uppercase; display: block; }
+        nav { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+        .nav-link { color: white; text-decoration: none; font-size: 1.2rem; opacity: 0.6; cursor: pointer; padding-bottom: 5px; font-weight: 600; border-bottom: 2px solid transparent; }
+        .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
 
-        nav { display: flex; justify-content: center; gap: 45px; margin-top: 35px; }
-        .nav-link { color: white; text-decoration: none; font-size: 1.1rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
-        .
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .hero-section { display: none; align-items: center; gap: 40px; background: var(--panel); border-radius: 20px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.1); }
+        .hero-section.active { display: flex; }
+
+        .hero-image { flex: 1.2; height: 500px; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .hero-text { flex: 1; padding: 40px; text-align: right; }
+        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.5rem; line-height: 1.8; color: #cbd5e0; margin: 0; }
+
+        @media (max-width: 768px) {
+            .hero-section.active { flex-direction: column; }
+            .hero-image { height: 300px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-main">FOCUS</div>
+    <div class="logo-sub">TECHNOLOGIES</div>
+    <nav>
+        <div class="nav-link active" onclick="showContent(event, 'face')">FACE ID</div>
+        <div class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
+        <div class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
+    </nav>
+</header>
+
+<div class="container">
+    <div id="face" class="hero-section active">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1000"></div>
+        <div class="hero-text">
+            <h2>Smart Access</h2>
+            <p>חוויית כניסה מתקדמת המבוססת על זיהוי פנים בטכנולוגיית AI. הפתרון המושלם לביטחון הבית, המשלב זיהוי מדויק תוך שבריר שנייה ללא צורך במגע. השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
+        </div>
+    </div>
+
+    <div id="keypad" class="hero-section">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1000"></div>
+        <div class="hero-text">
+            <h2>Secure Entry</h2>
+            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
+        </div>
+    </div>
+
+    <div id="monitor" class="hero-section">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1557315360-6a350ab4ebd2?q=80&w=1000"></div>
+        <div class="hero-text">
+            <h2>Total Control</h2>
+            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו שמה שיקר לכם מוגן ובטוח.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showContent(evt, id) {
+        var i, sections, links;
+        sections = document.getElementsByClassName("hero-section");
+        for (i = 0; i < sections.length; i++) { sections[i].style.display = "none"; }
+        links = document.getElementsByClassName("nav-link");
+        for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
+        document.getElementById(id).style.display = "flex";
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
