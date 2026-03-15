@@ -10,7 +10,6 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; overflow-x: hidden; }
 
         header { padding: 45px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
-        .logo-container { display: inline-block; }
         .logo-main { font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
         
         .target-o { position: relative; display: inline-block; padding: 0 4px; margin: 0 -4px; }
@@ -20,21 +19,21 @@
 
         .logo-sub { font-size: 1.1rem; color: var(--gold); letter-spacing: 8px; margin-top: 18px; font-weight: 700; text-transform: uppercase; display: block; }
 
-        nav { display: flex; justify-content: center; gap: 45px; margin-top: 35px; }
-        .nav-link { color: white; text-decoration: none; font-size: 1.1rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
+        nav { display: flex; justify-content: center; gap: 35px; margin-top: 35px; flex-wrap: wrap; }
+        .nav-link { color: white; text-decoration: none; font-size: 1.2rem; letter-spacing: 1px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
         .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
 
-        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        .hero-section { display: flex; align-items: center; gap: 50px; background: var(--panel); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); display: none; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .hero-section { display: none; align-items: center; gap: 50px; background: var(--panel); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
         .hero-section.active { display: flex; animation: fadeIn 0.8s ease forwards; }
 
-        .hero-image { flex: 1.2; height: 500px; overflow: hidden; }
-        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); transition: 0.5s; }
+        .hero-image { flex: 1.2; height: 550px; overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); transition: 0.5s; }
 
         .hero-text { flex: 1; padding: 50px; text-align: right; }
-        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; letter-spacing: 1px; font-weight: 700; }
-        .highlight-text { color: var(--gold); font-size: 1.2rem; display: block; margin-bottom: 20px; font-weight: 700; }
-        .hero-text p { font-size: 1.4rem; line-height: 1.8; color: #cbd5e0; font-weight: 400; margin: 0; }
+        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; }
+        .highlight-text { color: var(--gold); font-size: 1.3rem; display: block; margin-bottom: 20px; font-weight: 700; }
+        .hero-text p { font-size: 1.6rem; line-height: 1.8; color: #cbd5e0; font-weight: 400; margin: 0; }
         .hero-text strong { color: white; font-weight: 700; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -42,7 +41,9 @@
         @media (max-width: 768px) {
             .hero-section { flex-direction: column; }
             .hero-image { height: 300px; width: 100%; }
-            .hero-text { padding: 35px; text-align: center; }
+            .hero-text { padding: 30px; text-align: center; }
+            .hero-text h2 { font-size: 2.2rem; }
+            .hero-text p { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -57,15 +58,56 @@
         <div class="nav-link active" onclick="showContent(event, 'face')">FACE ID</div>
         <div class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
         <div class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
+        <div class="nav-link" onclick="showContent(event, 'about')">ABOUT</div>
     </nav>
 </header>
 
 <div class="container">
     <div id="face" class="hero-section active">
-        <div class="hero-image">
-            <img src="face-id.jpg.jpg" alt="Face ID">
-        </div>
+        <div class="hero-image"><img src="face-id.jpg.jpg" alt="Face ID"></div>
         <div class="hero-text">
             <h2>Smart Access</h2>
             <span class="highlight-text">הפתרון המושלם לבניינים ובתים פרטיים</span>
-            <p>מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך
+            <p>מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – כדי שתמיד תדעו <strong>שהיקרים לכם, מהפעוטות והילדים ועד לבני הגיל השלישי, מוגנים ובטוחים.</strong></p>
+        </div>
+    </div>
+
+    <div id="keypad" class="hero-section">
+        <div class="hero-image"><img src="keypad.jpg.jpg" alt="Keypads"></div>
+        <div class="hero-text">
+            <h2>Secure Entry</h2>
+            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
+        </div>
+    </div>
+
+    <div id="monitor" class="hero-section">
+        <div class="hero-image"><img src="monitoring.jpg.jpg" alt="Monitoring"></div>
+        <div class="hero-text">
+            <h2>Total Control</h2>
+            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו <strong>שהיקרים לכם מוגנים ובטוחים.</strong></p>
+        </div>
+    </div>
+
+    <div id="about" class="hero-section">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" alt="About Us"></div>
+        <div class="hero-text">
+            <h2>Our Identity</h2>
+            <p>ב-Focus Technologies, אנחנו לא רק מוכרים טכנולוגיה, אלא בונים ביטחון. הגישה שלנו משלבת מצוינות הנדסית עם הבנה עמוקה של צרכי המשפחה המודרנית. אנחנו כאן כדי להבטיח שהבית שלכם יהיה המקום הבטוח והחכם ביותר שאפשר.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showContent(evt, id) {
+        var i, sections, links;
+        sections = document.getElementsByClassName("hero-section");
+        for (i = 0; i < sections.length; i++) { sections[i].classList.remove("active"); }
+        links = document.getElementsByClassName("nav-link");
+        for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
+        document.getElementById(id).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
