@@ -8,27 +8,28 @@
         :root { --gold: #c5a059; --dark: #0a192f; --card: #112240; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--dark); color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         
-        /* לוגו יוקרתי */
+        /* לוגו מהודק ויוקרתי */
         .header { padding: 50px 0 30px 0; text-align: center; }
-        .logo { font-size: 3.5rem; color: var(--gold); font-weight: bold; letter-spacing: 10px; margin: 0; }
-        .logo span { border: 3px solid var(--gold); border-radius: 50%; padding: 0 10px; margin: 0 2px; }
+        .logo { font-size: 3.5rem; color: var(--gold); font-weight: bold; letter-spacing: 12px; margin: 0; position: relative; }
+        .logo .u-circle { position: relative; display: inline-block; padding: 0 10px; margin: 0 -10px; }
+        .logo .u-circle::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 3px solid var(--gold); border-radius: 50%; opacity: 0.8; }
 
-        /* טאבים קבועים ומחוברים */
+        /* טאבים קבועים ומחוברים - הטאב הפעיל משתנה בהתאם */
         .nav-container { width: 90%; max-width: 500px; background: var(--card); border: 1px solid var(--gold); border-radius: 15px 15px 0 0; display: flex; overflow: hidden; }
-        .tab-btn { flex: 1; background: none; border: none; color: var(--gold); padding: 15px; cursor: pointer; font-size: 1rem; transition: 0.3s; border-bottom: 2px solid transparent; }
+        .tab-btn { flex: 1; background: none; border: none; color: var(--gold); padding: 15px; cursor: pointer; font-size: 1rem; transition: 0.3s; border-bottom: 2px solid transparent; text-align: center; }
         .tab-btn.active { background: var(--gold); color: var(--dark); font-weight: bold; }
         .tab-btn:not(:last-child) { border-left: 1px solid rgba(197, 160, 89, 0.3); }
 
         /* כרטיס תוכן צמוד לטאבים */
         .content-area { width: 90%; max-width: 500px; background: var(--card); border: 1px solid var(--gold); border-top: none; border-radius: 0 0 15px 15px; overflow: hidden; }
-        .card { display: none; }
+        .card { display: none; padding-bottom: 30px; }
         .card.active { display: block; animation: fadeIn 0.4s ease; }
         
         .card img { width: 100%; height: 350px; object-fit: cover; }
         .card-body { padding: 30px; text-align: center; }
         
         h2 { color: var(--gold); margin: 0 0 15px 0; font-size: 1.8rem; }
-        p { color: #8892b0; line-height: 1.7; font-size: 1.1rem; margin: 0; }
+        p { color: #8892b0; line-height: 1.8; font-size: 1.1rem; margin: 0; text-align: right; text-align-last: center; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -36,13 +37,13 @@
 <body>
 
     <div class="header">
-        <h1 class="logo">FOC<span>U</span>S</h1>
+        <h1 class="logo">FOC<span class="u-circle">U</span>S</h1>
     </div>
 
     <div class="nav-container">
-        <button class="tab-btn active" onclick="showTab(event, 'face')">Face ID</button>
-        <button class="tab-btn" onclick="showTab(event, 'keypad')">Keypads</button>
         <button class="tab-btn" onclick="showTab(event, 'monitor')">Monitoring</button>
+        <button class="tab-btn" onclick="showTab(event, 'keypad')">Keypads</button>
+        <button class="tab-btn active" onclick="showTab(event, 'face')">Face ID</button>
     </div>
 
     <div class="content-area">
@@ -50,7 +51,7 @@
             <img src="face-id.jpg.jpg" alt="Face ID">
             <div class="card-body">
                 <h2>Smart Access</h2>
-                <p>מערכות זיהוי פנים מתקדמות המבוססות על בינה מלאכותית לאבטחה מקסימלית וחוויית משתמש חלקה.</p>
+                <p>מערכת זיהוי הפנים המתקדמת של FOCUS משלבת אלגוריתמי בינה מלאכותית (AI) מובילים לאבטחה בלתי מתפשרת. הטכנולוגיה שלנו מאפשרת כניסה מהירה, מאובטחת וחוויית משתמש חלקה, ללא צורך במגע. היא מזהה פנים באופן מדויק גם בתנאי תאורה מורכבים ומעניקה פתרון גישה חכם ומותאם לכל מבנה ארגוני.</p>
             </div>
         </div>
 
@@ -58,7 +59,7 @@
             <img src="keypad.jpg.jpg" alt="Keypad">
             <div class="card-body">
                 <h2>Secure Keypads</h2>
-                <p>פתרונות נעילה חכמים המשלבים עיצוב אלגנטי עם טכנולוגיית אבטחה מהמתקדמות בעולם.</p>
+                <p>לוחות המקשים המעוצבים והחסינים של FOCUS מציעים גישה קלאסית עם טכנולוגיה מודרנית. המקלדות שלנו מצוידות במנגנוני הגנה מתקדמים נגד חבלה ושיבוש, וניתן לתכנתן עם קודים מרובים ומורכבים. העיצוב האלגנטי והעמיד שלהן הופך אותן לפתרון אבטחה מהימן וחזק לנקודות כניסה שונות.</p>
             </div>
         </div>
 
@@ -66,7 +67,7 @@
             <img src="monitoring.jpg.jpg" alt="Monitoring">
             <div class="card-body">
                 <h2>Smart Monitoring</h2>
-                <p>ניטור רציף ושליטה חכמה מרחוק המעניקים שקט נפשי מלא לכל מבנה ארגוני.</p>
+                <p>מערכת הניטור החכמה של FOCUS מעניקה לכם שליטה מלאה על אבטחת המבנה בזמן אמת. עם ממשק מאובטח וידידותי למשתמש, ניתן לצפות בשידור חי מכל מקום בעולם, לנהל התראות חכמות ולפעול במהירות במקרה של אירוע חריג. המערכת מאפשרת ניטור רציף וקבלת תמונה מלאה של מצב האבטחה, ומבטיחה שקט נפשי מלא.</p>
             </div>
         </div>
     </div>
