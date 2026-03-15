@@ -9,12 +9,10 @@
         :root { --gold: #c5a059; --dark-bg: #050a14; --panel: #0d1626; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* Header & Logo Section */
         header { padding: 45px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
         .logo-container { display: inline-block; }
         .logo-main { font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; text-transform: uppercase; font-weight: 700; }
         
-        /* ה-Target בתוך ה-O */
         .target-o { position: relative; display: inline-block; padding: 0 4px; margin: 0 -4px; }
         .target-o::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border: 2px solid var(--gold); border-radius: 50%; opacity: 1; box-shadow: 0 0 15px rgba(197, 160, 89, 0.4); }
         .target-o::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2px; height: 42px; background: var(--gold); z-index: 1; }
@@ -22,44 +20,29 @@
 
         .logo-sub { font-size: 1.1rem; color: var(--gold); letter-spacing: 10px; margin-top: 22px; font-weight: 700; text-transform: uppercase; display: block; }
 
-        /* Navigation Menu */
         nav { display: flex; justify-content: center; gap: 45px; margin-top: 35px; }
         .nav-link { color: white; text-decoration: none; font-size: 1.1rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 6px; text-transform: uppercase; font-weight: 600; }
         .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
         .nav-link:hover { opacity: 1; color: var(--gold); }
 
-        /* Main Content Area */
         .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
         .hero-section { display: flex; align-items: center; gap: 50px; background: var(--panel); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); display: none; }
         .hero-section.active { display: flex; animation: fadeIn 0.8s ease forwards; }
 
         .hero-image { flex: 1.2; height: 550px; overflow: hidden; }
         .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); transition: 0.5s; }
-        .hero-section:hover .hero-image img { filter: brightness(1); }
 
         .hero-text { flex: 1; padding: 50px; text-align: right; }
         .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 25px; letter-spacing: 2px; font-weight: 700; }
         .hero-text p { font-size: 1.4rem; line-height: 1.8; color: #cbd5e0; font-weight: 400; margin: 0; }
 
-        /* Contact Section */
         .contact-section { margin-top: 80px; text-align: center; background: var(--panel); padding: 60px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.2); }
         .contact-section h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; }
         form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        input, textarea { padding: 15px; border-radius: 8px; border: 1px solid #1a2638; background: #050a14; color: white; font-family: 'Montserrat', sans-serif; font-size: 1rem; }
-        input:focus, textarea:focus { outline: none; border-color: var(--gold); }
+        input, textarea { padding: 15px; border-radius: 8px; border: 1px solid #1a2638; background: #050a14; color: white; font-family: 'Montserrat', sans-serif; font-size: 1rem; text-align: right; }
         button { padding: 18px; background: var(--gold); color: #050a14; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1.1rem; transition: 0.3s; }
-        button:hover { background: #e2be7d; transform: scale(1.02); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        @media (max-width: 768px) {
-            .hero-section { flex-direction: column; }
-            .hero-image { height: 300px; width: 100%; }
-            .logo-main { font-size: 2.8rem; letter-spacing: 8px; }
-            .hero-text { padding: 35px; text-align: center; }
-            .hero-text p { font-size: 1.2rem; }
-            nav { gap: 20px; }
-        }
     </style>
 </head>
 <body>
@@ -70,9 +53,9 @@
         <div class="logo-sub">TECHNOLOGIES</div>
     </div>
     <nav>
-        <div class="nav-link active" onclick="showContent(event, 'face')">FOCUS IDENTITY</div>
-        <div class="nav-link" onclick="showContent(event, 'keypad')">FOCUS ACCESS</div>
-        <div class="nav-link" onclick="showContent(event, 'monitor')">FOCUS VIEW</div>
+        <div class="nav-link active" onclick="showContent(event, 'face')">FACE ID</div>
+        <div class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
+        <div class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
     </nav>
 </header>
 
@@ -82,8 +65,8 @@
             <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Face ID">
         </div>
         <div class="hero-text">
-            <h2>Focus Identity</h2>
-            <p>חוויית כניסה הרמטית המבוססת על זיהוי פנים ביומטרי. הפתרון המושלם לביטחון הבית, המשלב זיהוי מדויק ללא צורך במגע. כי השקט הנפשי שלך מתחיל כבר בדלת הכניסה.</p>
+            <h2>Smart Access</h2>
+            <p>חוויית כניסה מתקדמת המבוססת על זיהוי פנים בטכנולוגיית AI. הפתרון המושלם לביטחון הבית, המשלב זיהוי מדויק תוך שבריר שנייה ללא צורך במגע. השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
         </div>
     </div>
 
@@ -92,8 +75,8 @@
             <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80" alt="Keypads">
         </div>
         <div class="hero-text">
-            <h2>Focus Access</h2>
-            <p>מערכות קודן ואינטרקום חכמות, המעניקות שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית להנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
+            <h2>Secure Entry</h2>
+            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
         </div>
     </div>
 
@@ -102,8 +85,8 @@
             <img src="https://images.unsplash.com/photo-1557315360-6a350ab4ebd2?auto=format&fit=crop&q=80" alt="Monitoring">
         </div>
         <div class="hero-text">
-            <h2>Focus View</h2>
-            <p>שליטה מלאה בבית מכל מקום בעולם. מערך ה-CCTV והניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו שמה שיקר לכם מוגן ובטוח.</p>
+            <h2>Total Control</h2>
+            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו שמה שיקר לכם מוגן ובטוח.</p>
         </div>
     </div>
 
