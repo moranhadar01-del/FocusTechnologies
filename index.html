@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FT-Global | Focus Technologies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@200;300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
@@ -22,8 +22,35 @@
             line-height: 1.6;
         }
 
+        /* ניווט מרווח ואלגנטי */
+        nav {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* מרווח גדול בין הטאבים */
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 200; /* פונט דק מאוד למראה יוקרתי */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+            opacity: 1;
+            letter-spacing: 4px;
+        }
+
         header {
-            height: 100vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -31,76 +58,78 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80') no-repeat center center/cover;
             text-align: center;
             border-bottom: 2px solid var(--gold);
+            position: relative;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--gold);
             margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 5px;
             text-transform: uppercase;
+            color: var(--text);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .feature-item {
             background: var(--gray);
-            padding: 50px;
+            padding: 45px;
             border-radius: 20px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.4s ease;
         }
 
         .feature-item:hover {
-            transform: translateY(-5px);
             border-color: var(--gold);
         }
 
         h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .highlight-text {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: block;
         }
 
         .main-description {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             line-height: 1.8;
             color: var(--text);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .footer-note {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-style: italic;
             color: var(--gold);
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         footer {
             text-align: center;
             padding: 40px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
             border-top: 1px solid #333;
         }
@@ -109,6 +138,13 @@
 <body>
 
     <header>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">SOLUTIONS</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </nav>
+        
         <h1>FOCUS</h1>
         <div class="subtitle">Technologies Global</div>
     </header>
@@ -131,3 +167,7 @@
 
     <footer>
         &copy; 2026 FT-Global Group. All rights reserved.
+    </footer>
+
+</body>
+</html>
