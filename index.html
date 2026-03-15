@@ -3,115 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Technologies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Focus Technologies | Home Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --light-gold: #f4e4bc; --dark: #050a14; --card: #0d1626; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        :root { --gold: #c5a059; --dark-bg: #050a14; --panel: #0d1626; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; padding: 0; overflow-x: hidden; }
+
+        /* Header & Logo Section */
+        header { padding: 40px 0; text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, #0a111f, var(--dark-bg)); }
+        .logo-container { display: inline-block; }
+        .logo-main { font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold); letter-spacing: 12px; line-height: 1; margin: 0; }
         
-        /* לוגו יוקרתי עם Target הרמוני */
-        .header { padding: 70px 0 50px 0; text-align: center; width: 100%; }
-        .logo-container { position: relative; display: inline-block; }
-        .logo-main { 
-            font-family: 'Cinzel', serif; 
-            font-size: 4.5rem; 
-            color: var(--gold); 
-            font-weight: 700; 
-            letter-spacing: 15px; 
-            margin: 0; 
-            line-height: 1; 
-            text-transform: uppercase;
+        /* ה-Target בתוך ה-O */
+        .target-o { position: relative; display: inline-block; padding: 0 4px; }
+        .target-o::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 55px; height: 55px; border: 1.5px solid var(--gold); border-radius: 50%; box-shadow: 0 0 10px rgba(197, 160, 89, 0.3); }
+
+        .logo-sub { font-size: 0.9rem; color: var(--gold); letter-spacing: 6px; margin-top: 15px; font-weight: 300; opacity: 0.8; }
+
+        /* Navigation Menu */
+        nav { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+        .nav-link { color: white; text-decoration: none; font-size: 0.9rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 1px solid transparent; padding-bottom: 5px; }
+        .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 1px solid var(--gold); }
+        .nav-link:hover { opacity: 1; }
+
+        /* Main Content Area */
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        
+        .hero-section { display: flex; align-items: center; gap: 50px; background: var(--panel); border: 1px solid rgba(197, 160, 89, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); display: none; }
+        .hero-section.active { display: flex; animation: fadeIn 0.8s ease forwards; }
+
+        .hero-image { flex: 1.2; height: 500px; overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); }
+
+        .hero-text { flex: 1; padding: 50px; }
+        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 2px; }
+        .hero-text p { font-size: 1.1rem; line-height: 1.8; color: #a0aec0; font-weight: 300; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Responsiveness for mobile */
+        @media (max-width: 768px) {
+            .hero-section { flex-direction: column; }
+            .hero-image { height: 300px; width: 100%; }
+            .logo-main { font-size: 2.5rem; }
+            .target-o::after { width: 40px; height: 40px; }
         }
-        /* אפקט הכוונת/Target בתוך ה-O */
-        .u-circle { position: relative; display: inline-block; padding: 0 5px; margin: 0 -5px; }
-        .u-circle::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.8; }
-        
-        .logo-sub { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 1.1rem; 
-            color: var(--light-gold); 
-            letter-spacing: 8px; 
-            margin-top: 15px; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            display: block; 
-            opacity: 0.9;
-        }
-        .logo-line { height: 1px; width: 60px; background: var(--gold); margin: 20px auto; opacity: 0.5; }
-
-        /* ניווט - הטאב הפעיל משתנה בהתאם */
-        .nav-container { width: 95%; max-width: 600px; display: flex; background: var(--card); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 12px 12px 0 0; overflow: hidden; margin-top: 20px; }
-        .tab-btn { flex: 1; background: none; border: none; color: white; padding: 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 2px; transition: 0.4s; opacity: 0.5; border-bottom: 3px solid transparent; text-align: center; }
-        .tab-btn.active { opacity: 1; color: var(--gold); border-bottom: 3px solid var(--gold); background: rgba(197, 160, 89, 0.05); font-weight: bold; }
-
-        /* תוכן האתר */
-        .content-area { width: 95%; max-width: 600px; background: var(--card); border: 1px solid rgba(197, 160, 89, 0.3); border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        .card { display: none; padding-bottom: 30px; }
-        .card.active { display: block; animation: slideUp 0.6s ease; }
-        
-        .card img { width: 100%; height: 400px; object-fit: cover; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
-        .card-body { padding: 40px; text-align: center; }
-        
-        h2 { font-family: 'Cinzel', serif; color: var(--gold); margin: 0 0 20px 0; font-size: 1.8rem; letter-spacing: 2px; }
-        p { color: #cbd5e0; line-height: 1.9; font-size: 1.05rem; margin: 0; text-align: right; text-align-last: center; font-weight: 300; }
-
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="logo-container">
-            <div class="logo-main">F<span class="u-circle">O</span>CUS</div>
-            <div class="logo-line"></div>
-            <div class="logo-sub">TECHNOLOGIES</div>
-        </div>
+<header>
+    <div class="logo-container">
+        <div class="logo-main">F<span class="target-o">O</span>CUS</div>
+        <div class="logo-sub">TECHNOLOGIES</div>
     </div>
+    <nav>
+        <div class="nav-link active" onclick="showContent(event, 'face')">FACE ID</div>
+        <div class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
+        <div class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
+    </nav>
+</header>
 
-    <div class="nav-container">
-        <button class="tab-btn active" onclick="showTab(event, 'face')">FACE ID</button>
-        <button class="tab-btn" onclick="showTab(event, 'keypad')">KEYPADS</button>
-        <button class="tab-btn" onclick="showTab(event, 'monitor')">MONITORING</button>
-    </div>
-
-    <div class="content-area">
-        <div id="face" class="card active">
+<div class="container">
+    <div id="face" class="hero-section active">
+        <div class="hero-image">
             <img src="face-id.jpg.jpg" alt="Face ID">
-            <div class="card-body">
-                <h2>SMART ACCESS</h2>
-                <p>מערכת זיהוי הפנים המתקדמת של FOCUS משלבת אלגוריתמי בינה מלאכותית (AI) מובילים לאבטחה ביתית בלתי מתפשרת. הטכנולוגיה שלנו מאפשרת כניסה מהירה, מאובחנת וחוויית משתמש חלקה, ללא צורך במגע. היא מזהה פנים באופן מדויק גם בתנאי תאורה מורכבים ומעניקה פתרון גישה חכם ומותאם לכל בית.</p>
-            </div>
         </div>
-
-        <div id="keypad" class="card">
-            <img src="keypad.jpg.jpg" alt="Keypad">
-            <div class="card-body">
-                <h2>SECURE ENTRY</h2>
-                <p>לוחות המקשים המעוצבים והחסינים של FOCUS מציעים גישה קלאסית עם טכנולוגיה מודרנית לביטחון הבית. המקלדות שלנו מצוידות במנגנוני הגנה מתקדמים נגד חבלה ושיבוש, וניתן לתכנתן עם קודים מרובים ומורכבים. העיצוב האלגנטי והעמיד שלהן הופך אותן לפתרון אבטחה מהימן וחזק לנקודות כניסה שונות בבית.</p>
-            </div>
-        </div>
-
-        <div id="monitor" class="card">
-            <img src="monitoring.jpg.jpg" alt="Monitoring">
-            <div class="card-body">
-                <h2>TOTAL CONTROL</h2>
-                <p>מערכת הניטור החכמה של FOCUS מעניקה לכם שליטה מלאה על אבטחת הבית בזמן אמת. עם ממשק מאובטח וידידותי למשתמש, ניתן לצפות בשידור חי מכל מקום בעולם, לנהל התראות חכמות ולפעול במהירות במקרה של אירוע חריג. המערכת מאפשרת ניטור רציף וקבלת תמונה מלאה של מצב האבטחה, ומבטיחה שקט נפשי מלא לכם ולמשפחתכם.</p>
-            </div>
+        <div class="hero-text">
+            <h2>Smart Access</h2>
+            <p>חוויית כניסה מתקדמת המבוססת על זיהוי פנים בטכנולוגיית AI. הפתרון המושלם לביטחון הבית, המשלב זיהוי מדויק תוך שבריר שנייה ללא צורך במגע. השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
         </div>
     </div>
 
-    <script>
-        function showTab(evt, id) {
-            var i, cards, buttons;
-            cards = document.getElementsByClassName("card");
-            for (i = 0; i < cards.length; i++) { cards[i].classList.remove("active"); }
-            
-            buttons = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < buttons.length; i++) { buttons[i].classList.remove("active"); }
-            
-            document.getElementById(id).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
+    <div id="keypad" class="hero-section">
+        <div class="hero-image">
+            <img src="keypad.jpg.jpg" alt="Keypads">
+        </div>
+        <div class="hero-text">
+            <h2>Secure Entry</h2>
+            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
+        </div>
+    </div>
+
+    <div id="monitor" class="hero-section">
+        <div class="hero-image">
+            <img src="monitoring.jpg.jpg" alt="Monitoring">
+        </div>
+        <div class="hero-text">
+            <h2>Total Control</h2>
+            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד, כדי שתמיד תדעו שמה שיקר לכם מוגן ובטוח.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showContent(evt, id) {
+        var i, sections, links;
+        sections = document.getElementsByClassName("hero-section");
+        for (i = 0; i < sections.length; i++) { sections[i].classList.remove("active"); }
+        
+        links = document.getElementsByClassName("nav-link");
+        for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
+        
+        document.getElementById(id).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
 </body>
 </html>
