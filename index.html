@@ -1,24 +1,74 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Technologies</title>
+    <style>
+        body { font-family: sans-serif; background-color: #0a192f; color: white; text-align: center; margin: 0; padding: 0; }
+        .header { padding: 40px 0; }
+        .logo { font-size: 3.5rem; color: #c5a059; font-weight: bold; letter-spacing: 8px; }
+        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .tab-btn { background: none; border: 1px solid #c5a059; color: #c5a059; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        .tab-btn.active { background: #c5a059; color: #0a192f; font-weight: bold; }
+        .content-area { display: flex; justify-content: center; padding: 0 20px; }
+        .card { background: #112240; border: 1px solid #c5a059; border-radius: 15px; overflow: hidden; max-width: 450px; display: none; }
+        .card.active { display: block; }
+        .card img { width: 100%; height: auto; display: block; }
+        .card-body { padding: 20px; }
+        h2 { color: #c5a059; margin: 0 0 10px 0; }
+        p { color: #8892b0; line-height: 1.5; }
+    </style>
+</head>
+<body>
 
-Go to file
-t
-Name		
-moranhadar01-del
-moranhadar01-del
-Update index.html
-933a20a
- · 
-now
-.github/workflows
-Create static.yml
-37 minutes ago
-face-id.jpg.jpg
-Add files via upload
-1 hour ago
-index.html
-Update index.html
-now
-keypad.jpg.jpg
-Add files via upload
-1 hour ago
-monitoring.jpg.jpg
-Add files via upload
+    <div class="header">
+        <h1 class="logo">FOCUS</h1>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('face')">Face ID</button>
+        <button class="tab-btn" onclick="showTab('keypad')">Keypads</button>
+        <button class="tab-btn" onclick="showTab('monitor')">Monitoring</button>
+    </div>
+
+    <div class="content-area">
+        <div id="face" class="card active">
+            <img src="face-id.jpg.jpg" alt="Face ID">
+            <div class="card-body">
+                <h2>Smart Access</h2>
+                <p>מערכות זיהוי פנים מתקדמות המבוססות על בינה מלאכותית.</p>
+            </div>
+        </div>
+
+        <div id="keypad" class="card">
+            <img src="keypad.jpg.jpg" alt="Keypad">
+            <div class="card-body">
+                <h2>Secure Keypads</h2>
+                <p>לוחות מקשים מעוצבים וחסינים לשליטה מלאה.</p>
+            </div>
+        </div>
+
+        <div id="monitor" class="card">
+            <img src="monitoring.jpg.jpg" alt="Monitoring">
+            <div class="card-body">
+                <h2>Smart Monitoring</h2>
+                <p>ניטור בזמן אמת ושליטה מרחוק מכל מקום.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(id) {
+            var cards = document.getElementsByClassName('card');
+            var buttons = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('active');
+                buttons[i].classList.remove('active');
+            }
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
