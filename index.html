@@ -4,134 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FT-Global | Focus Technologies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #d4af37;
-            --black: #0a0a0a;
-            --gray: #1a1a1a;
-            --text: #e0e0e0;
-        }
-
-        html { scroll-behavior: smooth; } /* גלילה חלקה בלחיצה על טאב */
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--black);
-            color: var(--text);
-            font-family: 'Assistant', sans-serif;
-        }
-
-        header {
-            height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1557597774-9d2739f85a76?auto=format&fit=crop&q=80') no-repeat center center/cover;
-            text-align: center;
-            border-bottom: 2px solid var(--gold);
-            position: relative;
-        }
-
-        nav {
-            position: absolute;
-            top: 30px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-            transition: 0.3s;
-        }
-
+        :root { --gold: #d4af37; --black: #0a0a0a; --gray: #1a1a1a; --text: #e0e0e0; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; padding: 0; background-color: var(--black); color: var(--text); font-family: 'Assistant', sans-serif; line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(10, 10, 10, 0.95); display: flex; justify-content: center; gap: 40px; padding: 20px 0; z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; letter-spacing: 2px; font-weight: 300; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--gold);
-            margin: 0;
-            letter-spacing: 5px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .feature-item {
-            background: var(--gray);
-            padding: 50px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .main-description {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid #333;
-            color: #666;
-        }
+        header { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80') no-repeat center center/cover; text-align: center; border-bottom: 2px solid var(--gold); }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin: 0; letter-spacing: 5px; }
+        .subtitle { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; }
+        .container { max-width: 900px; margin: 0 auto; padding: 100px 20px; }
+        .feature-item { background: var(--gray); padding: 50px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 25px; }
+        .contact-box { background: linear-gradient(145deg, #1a1a1a, #0a0a0a); padding: 60px; border-radius: 20px; border: 1px solid var(--gold); text-align: center; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid var(--gold); background: #1a1a1a; color: white; font-family: 'Assistant', sans-serif; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: var(--gold); color: black; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 1rem; }
+        button:hover { background: #b8962d; transform: scale(1.02); }
+        footer { text-align: center; padding: 40px; color: #666; font-size: 0.8rem; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#solutions">SOLUTIONS</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-        
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#solutions">SOLUTIONS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <header id="home">
         <h1>FOCUS</h1>
         <div class="subtitle">Technologies Global</div>
     </header>
 
-    <div class="container" id="solutions">
-        <div class="feature-item">
+    <div class="container">
+        <div id="solutions" class="feature-item">
             <h3>Focus Identity</h3>
-            <p style="font-weight: bold; font-size: 1.4rem; color: #fff;">הפתרון המושלם לבניינים ובתים פרטיים</p>
+            <p style="font-weight: bold; font-size: 1.3rem; color: #fff;">הפתרון המושלם לבניינים ובתים פרטיים</p>
+            <p>מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – כדי שתמיד תדעו שהיקרים לכם מוגנים ובטוחים.</p>
+        </div>
+
+        <div id="about" class="feature-item">
+            <h3>The Focus Vision</h3>
+            <p>אנחנו ב-Focus Technologies מגדירים מחדש את המושג 'ביטחון אישי'. מתוך הבנה עמוקה של צרכי הבית המודרני, פיתחנו פתרונות ביומטריים הרמטיים שמבטיחים שהכניסה למרחב הפרטי שלכם תהיה תמיד חלקה, בטוחה ואישית.</p>
+        </div>
+
+        <div id="contact" class="contact-box">
+            <h3>Contact Us</h3>
+            <p>השאירו פרטים ונחזור אליכם בהקדם</p>
             
-            <p class="main-description">
-                מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. 
-                הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – כדי שתמיד תדעו 
-                <strong>שהיקרים לכם, מהפעוטות והילדים ועד לבני הגיל השלישי, מוגנים ובטוחים.</strong>
-            </p>
-            
-            <p style="color: var(--gold); font-style: italic;">השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
+            <form action="https://formspree.io/f/Moranhadar01@gmail.com" method="POST" style="max-width: 400px; margin: 30px auto;">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="_replyto" placeholder="אימייל לחזרה" required>
+                <textarea name="message" placeholder="איך נוכל לעזור?" rows="4" required></textarea>
+                <button type="submit">שלח הודעה</button>
+            </form>
         </div>
     </div>
 
