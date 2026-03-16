@@ -15,7 +15,7 @@
         * { box-sizing: border-box; }
 
         body { 
-            font-family: 'Assistant', 'Montserrat', sans-serif; 
+            font-family: 'Assistant', sans-serif; 
             background-color: var(--dark-blue); 
             color: white; 
             margin: 0; 
@@ -52,7 +52,14 @@
 
         .logo-sub { font-size: 0.85rem; color: var(--gold); letter-spacing: 8px; margin-top: 10px; font-weight: 700; text-transform: uppercase; display: block; }
 
-        nav { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-top: 15px; 
+            flex-wrap: wrap; 
+            direction: ltr; 
+        }
         .nav-link { color: white; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; opacity: 0.6; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 4px; text-transform: uppercase; font-weight: 600; }
         .nav-link.active { opacity: 1; color: var(--gold); border-bottom: 2px solid var(--gold); }
 
@@ -66,10 +73,11 @@
             justify-content: center;
             width: 100%;
             overflow: hidden;
+            direction: rtl; 
         }
 
         .hero-section { 
-            display: none; /* כולם מוסתרים בהתחלה */
+            display: none; 
             align-items: center; 
             gap: 30px; 
             background: var(--panel); 
@@ -161,7 +169,7 @@
         <div class="hero-image"><img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1000" alt="Contact Us"></div>
         <div class="hero-text">
             <h2>Contact Us</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 10px;">נשמח לשמוע מכם ולבנות יחד את המעטפת הביטחונית המושלמת.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">מוזמנים ליצור איתנו קשר, נשמח להכיר ולהתאים לכם את הפתרון הנכון עבורכם.</p>
             <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
                 <input type="text" name="name" placeholder="שם מלא" required>
                 <input type="email" name="email" placeholder="אימייל" required>
@@ -194,7 +202,6 @@
         }
     }
 
-    // הפעלה אוטומטית של ה-About בטעינת הדף
     window.onload = function() {
         showContent(null, 'about');
     };
