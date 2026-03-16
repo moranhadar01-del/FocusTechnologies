@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Technologies | Home Security</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
             --gold: #c5a059; 
@@ -15,7 +15,7 @@
         * { box-sizing: border-box; }
 
         body { 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Assistant', 'Montserrat', sans-serif; 
             background-color: var(--dark-blue); 
             color: white; 
             margin: 0; 
@@ -69,7 +69,7 @@
         }
 
         .hero-section { 
-            display: none; 
+            display: none; /* כולם מוסתרים בהתחלה */
             align-items: center; 
             gap: 30px; 
             background: var(--panel); 
@@ -78,6 +78,7 @@
             overflow: hidden; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
             width: 100%;
+            height: auto;
             max-height: 90%; 
         }
         
@@ -95,4 +96,109 @@
         input, textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(197, 160, 89, 0.3); padding: 10px; color: white; border-radius: 8px; font-family: inherit; }
         button { background: var(--gold); color: var(--dark-blue); border: none; padding: 12px; font-weight: 700; cursor: pointer; border-radius: 8px; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform:
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            body { overflow-y: auto; height: auto; }
+            .container { height: auto; padding: 10px; overflow: visible; }
+            .hero-section { flex-direction: column; max-height: none; margin-bottom: 20px; }
+            .hero-image { height: 200px; width: 100%; min-height: 200px; }
+            .hero-text { padding: 25px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <div class="logo-main">F<span class="target-o">O<span></span></span>CUS</div>
+        <div class="logo-sub">TECHNOLOGIES</div>
+    </div>
+    <nav>
+        <div id="link-about" class="nav-link" onclick="showContent(event, 'about')">ABOUT</div>
+        <div id="link-keypad" class="nav-link" onclick="showContent(event, 'keypad')">KEYPADS</div>
+        <div id="link-face" class="nav-link" onclick="showContent(event, 'face')">FACE ID</div>
+        <div id="link-monitor" class="nav-link" onclick="showContent(event, 'monitor')">MONITORING</div>
+        <div id="link-contact" class="nav-link" onclick="showContent(event, 'contact')">CONTACT</div>
+    </nav>
+</header>
+
+<div class="container">
+    <div id="about" class="hero-section">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" alt="About Us"></div>
+        <div class="hero-text">
+            <h2>Our Identity</h2>
+            <p>ב-Focus Technologies, אנחנו לא רק מוכרים טכנולוגיה, אלא בונים ביטחון. הגישה שלנו משלבת מצוינות הנדסית עם הבנה עמוקה של צרכי המשפחה המודרנית. אנחנו כאן כדי להבטיח שהבית שלכם יהיה המקום הבטוח והחכם ביותר שאפשר.</p>
+        </div>
+    </div>
+
+    <div id="keypad" class="hero-section">
+        <div class="hero-image"><img src="keypad.jpg.jpg" alt="Keypads"></div>
+        <div class="hero-text">
+            <h2>Secure Entry</h2>
+            <p>לוחות מקשים מעוצבים וחסינים המעניקים שכבת הגנה נוספת לביתכם. שילוב בין אסתטיקה מודרנית לבין הנדסת ביטחון קפדנית, המאפשרת ניהול קודים חכם ועמידות מלאה לאורך שנים.</p>
+        </div>
+    </div>
+
+    <div id="face" class="hero-section">
+        <div class="hero-image"><img src="face-id.jpg.jpg" alt="Face ID"></div>
+        <div class="hero-text">
+            <h2>Smart Access</h2>
+            <span class="highlight-text">הפתרון המושלם לבניינים ובתים פרטיים</span>
+            <p>מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
+        </div>
+    </div>
+
+    <div id="monitor" class="hero-section">
+        <div class="hero-image"><img src="monitoring.jpg.jpg" alt="Monitoring"></div>
+        <div class="hero-text">
+            <h2>Total Control</h2>
+            <p>שליטה מלאה בבית מכל מקום בעולם. מערך הניטור שלנו מאפשר צפייה בזמן אמת והתראות חכמות ישירות לנייד – כדי שתמיד תדעו שהיקרים לכם, מהפעוטות והילדים ועד לבני הגיל השלישי, מוגנים ובטוחים.</p>
+        </div>
+    </div>
+
+    <div id="contact" class="hero-section">
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1000" alt="Contact Us"></div>
+        <div class="hero-text">
+            <h2>Contact Us</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">נשמח לשמוע מכם ולבנות יחד את המעטפת הביטחונית המושלמת.</p>
+            <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" rows="3" placeholder="איך נוכל לעזור?" required></textarea>
+                <button type="submit">שלח הודעה</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showContent(evt, id) {
+        var sections = document.getElementsByClassName("hero-section");
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = "none";
+            sections[i].classList.remove("active");
+        }
+        var links = document.getElementsByClassName("nav-link");
+        for (var i = 0; i < links.length; i++) {
+            links[i].classList.remove("active");
+        }
+        var target = document.getElementById(id);
+        target.style.display = "flex";
+        target.classList.add("active");
+        
+        if (evt) {
+            evt.currentTarget.classList.add("active");
+        } else {
+            document.getElementById('link-' + id).classList.add("active");
+        }
+    }
+
+    // הפעלה אוטומטית של ה-About בטעינת הדף
+    window.onload = function() {
+        showContent(null, 'about');
+    };
+</script>
+
+</body>
+</html>
