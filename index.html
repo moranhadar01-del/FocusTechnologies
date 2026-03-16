@@ -95,14 +95,48 @@
         .hero-image { flex: 1; height: 100%; min-height: 350px; overflow: hidden; }
         .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
 
-        .hero-text { flex: 1.2; padding: 40px; text-align: right; }
-        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
-        .highlight-text { color: var(--gold); font-size: 1.1rem; display: block; margin-bottom: 15px; font-weight: 700; }
-        .hero-text p { font-size: 1.4rem; line-height: 1.6; color: #cbd5e0; font-weight: 400; margin: 0; }
+        .hero-text { flex: 1.2; padding: 40px; text-align: right; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
+        .hero-text h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; text-align: right; width: 100%; }
+        .highlight-text { color: var(--gold); font-size: 1.1rem; display: block; margin-bottom: 15px; font-weight: 700; text-align: right; width: 100%; }
+        .hero-text p { font-size: 1.4rem; line-height: 1.6; color: #cbd5e0; font-weight: 400; margin: 0; text-align: right; width: 100%; }
 
-        form { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 15px; }
-        input, textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(197, 160, 89, 0.3); padding: 10px; color: white; border-radius: 8px; font-family: inherit; }
-        button { background: var(--gold); color: var(--dark-blue); border: none; padding: 12px; font-weight: 700; cursor: pointer; border-radius: 8px; }
+        /* CONTACT FORM - מהודק וממורכז */
+        #contact .hero-text { align-items: center; padding: 30px; } /* מירכוז ספציפי ל-Contact */
+        #contact h2 { text-align: center; }
+        #contact p { text-align: center; max-width: 450px; margin: 0 auto 10px auto; }
+
+        form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            width: 100%; 
+            max-width: 450px; /* רוחב מקסימלי כדי שלא יימתח */
+            margin: 15px auto 0 auto; /* מירכוז הטופס עצמו */
+        }
+        
+        input, textarea { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(197, 160, 89, 0.3); 
+            padding: 12px; 
+            color: white; 
+            border-radius: 8px; 
+            font-family: inherit; 
+            width: 100%; 
+            text-align: right; /* יישור טקסט לימין בתוך השדות */
+        }
+        
+        button { 
+            background: var(--gold); 
+            color: var(--dark-blue); 
+            border: none; 
+            padding: 14px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            border-radius: 8px; 
+            transition: 0.3s;
+            width: 100%;
+        }
+        button:hover { background: #e0b86d; transform: translateY(-2px); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -111,7 +145,9 @@
             .container { height: auto; padding: 10px; overflow: visible; }
             .hero-section { flex-direction: column; max-height: none; margin-bottom: 20px; }
             .hero-image { height: 200px; width: 100%; min-height: 200px; }
-            .hero-text { padding: 25px; text-align: center; }
+            .hero-text { padding: 25px; text-align: center; align-items: center; }
+            .hero-text h2, .highlight-text, .hero-text p { text-align: center; }
+            form { max-width: 100%; }
         }
     </style>
 </head>
@@ -169,7 +205,7 @@
         <div class="hero-image"><img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1000" alt="Contact Us"></div>
         <div class="hero-text">
             <h2>Contact Us</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 10px;">מוזמנים ליצור איתנו קשר, נשמח להכיר ולהתאים לכם את הפתרון הנכון עבורכם.</p>
+            <p style="font-size: 1.1rem;">מוזמנים ליצור איתנו קשר, נשמח להכיר ולהתאים לכם את הפתרון הנכון עבורכם.</p>
             <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
                 <input type="text" name="name" placeholder="שם מלא" required>
                 <input type="email" name="email" placeholder="אימייל" required>
