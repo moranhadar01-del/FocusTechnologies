@@ -41,7 +41,6 @@
             .hero-section { flex-direction: column; }
             .hero-image { height: 300px; width: 100%; }
             .hero-text { padding: 30px; text-align: center; }
-            .hero-text h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -66,7 +65,7 @@
         <div class="hero-text">
             <h2>Smart Access</h2>
             <span class="highlight-text">הפתרון המושלם לבניינים ובתים פרטיים</span>
-            <p>חוויית כניסה מתקדמת המבוססת על זיהוי פנים בטכנולוגיית AI. פתרון המשלב זיהוי מדויק תוך שבריר שנייה ללא צורך במגע. השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
+            <p>מערכת הרמטית לזיהוי פנים: הסוף לקודים ולוחות מקשים שנשחקים עם הזמן. הטכנולוגיה שלנו מעניקה שליטה מלאה ועמידות לאורך שנים – השקט הנפשי שלך מתחיל בדלת הכניסה.</p>
         </div>
     </div>
 
@@ -87,25 +86,3 @@
     </div>
 
     <div id="about" class="hero-section">
-        <div class="hero-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" alt="About Us"></div>
-        <div class="hero-text">
-            <h2>Our Identity</h2>
-            <p>ב-Focus Technologies, אנחנו לא רק מוכרים טכנולוגיה, אלא בונים ביטחון. הגישה שלנו משלבת מצוינות הנדסית עם הבנה עמוקה של צרכי המשפחה המודרנית. אנחנו כאן כדי להבטיח שהבית שלכם יהיה המקום הבטוח והחכם ביותר שאפשר.</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    function showContent(evt, id) {
-        var i, sections, links;
-        sections = document.getElementsByClassName("hero-section");
-        for (i = 0; i < sections.length; i++) { sections[i].classList.remove("active"); }
-        links = document.getElementsByClassName("nav-link");
-        for (i = 0; i < links.length; i++) { links[i].classList.remove("active"); }
-        document.getElementById(id).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-</body>
-</html>
